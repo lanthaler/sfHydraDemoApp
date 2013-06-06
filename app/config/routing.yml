@@ -1,0 +1,4 @@
+hydra:
+    resource: "@HydraBundle/Controller/"
+    type:     annotation
+    prefix:   /

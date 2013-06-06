@@ -10,6 +10,11 @@ _configurator:
     resource: "@SensioDistributionBundle/Resources/config/routing/webconfigurator.xml"
     prefix:   /_configurator
 
+# MLDemoBundle routes (to be removed)
+_demo:
+    resource: "@MLDemoBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 _main:
     resource: routing.yml
-

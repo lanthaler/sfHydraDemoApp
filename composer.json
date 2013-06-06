@@ -1,11 +1,19 @@
 {
-    "name": "symfony/framework-standard-edition",
-    "license": "MIT",
+    "name": "ml/hydra-demo-app",
     "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
-    "autoload": {
-        "psr-0": { "": "src/" }
-    },
+    "description": "The Hydra issue tracker demo",
+    "keywords": [ "JSON-LD", "jsonld", "Hydra", "Web API", "Symfony", "Symfony2", "hypermedia", "REST" ],
+    "homepage": "http://www.markus-lanthaler.com/hydra/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Markus Lanthaler",
+            "email": "mail@markus-lanthaler.com",
+            "homepage": "http://www.markus-lanthaler.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.3",
         "symfony/symfony": "2.3.*",
@@ -18,7 +26,8 @@
         "sensio/distribution-bundle": "2.3.*",
         "sensio/framework-extra-bundle": "2.3.*",
         "sensio/generator-bundle": "2.3.*",
-        "incenteev/composer-parameter-handler": "~2.0"
+        "incenteev/composer-parameter-handler": "~2.0",
+        "ml/hydra-bundle": "@dev"
     },
     "scripts": {
         "post-install-cmd": [
@@ -36,10 +45,6 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
         ]
     },
-    "config": {
-        "bin-dir": "bin"
-    },
-    "minimum-stability": "RC",
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
@@ -49,5 +54,11 @@
         "branch-alias": {
             "dev-master": "2.4-dev"
         }
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-0": { "": "src/" }
     }
 }
