@@ -22,7 +22,7 @@ http://getcomposer.org/ or just run the following command:
 
 Then, use the `create-project` command to generate a new Hydra application:
 
-    php composer.phar create-project ml/hydra-demo-app path/to/install
+    php composer.phar create-project -s dev ml/hydra-demo-app path/to/install
 
 Composer will install Symfony, the HydraBundle, and all the dependencies
 under the `path/to/install` directory.
