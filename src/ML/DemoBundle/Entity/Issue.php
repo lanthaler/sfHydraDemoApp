@@ -17,6 +17,8 @@ use ML\HydraBundle\Mapping as Hydra;
  *     "issue_replace",
  *     "issue_delete"
  * } )
+ *
+ * @author Markus Lanthaler <mail@markus-lanthaler.com>
  */
 class Issue
 {
@@ -52,6 +54,8 @@ class Issue
     private $description;
 
     /**
+     * is_open
+     *
      * Is the issue open?
      *
      * Use for 1 yes, 0 for no when modifying this value.

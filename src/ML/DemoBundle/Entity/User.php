@@ -8,6 +8,8 @@ use Doctrine\ORM\Mapping as ORM;
 use ML\HydraBundle\Mapping as Hydra;
 
 /**
+ * User
+ *
  * A User represents a person registered in the system.
  *
  * @ORM\Table()
@@ -72,7 +74,7 @@ class User implements UserInterface, \Serializable
      * @Hydra\Collection("user_raised_issues_retrieve")
      * @Hydra\Operations( { "user_raised_issues_retrieve" } )
      */
-    private $raised_issues;
+    private $raisedIssues;
 
     /**
      * Constructor
@@ -180,7 +182,7 @@ class User implements UserInterface, \Serializable
      */
     public function getRaisedIssues()
     {
-        return $this->raised_issues;
+        return $this->raisedIssues;
     }
 
     /**

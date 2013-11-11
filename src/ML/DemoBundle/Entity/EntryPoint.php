@@ -10,6 +10,8 @@ use ML\HydraBundle\Mapping as Hydra;
  *
  * @Hydra\Expose()
  * @Hydra\Id(route = "entry_point")
+ *
+ * @author Markus Lanthaler <mail@markus-lanthaler.com>
  */
 class EntryPoint
 {
@@ -49,11 +51,11 @@ class EntryPoint
      *
      * @Hydra\Expose()
      * @Hydra\Route("user_create")
-     * @Hydra\Operations( { "user_create" })
+     * @Hydra\Operations( { "user_create" } )
      *
      * @return boolean Returns true if the link should be shown, false otherwise
      */
-    public function registerUserIri()
+    public function getRegisterUserIri()
     {
         return is_null($this->user);
     }
@@ -63,7 +65,6 @@ class EntryPoint
      *
      * @Hydra\Expose()
      * @Hydra\Route("user_retrieve")
-     * @Hydra\Operations( { "user_retrieve" })
      *
      * @return mixed Returns the IRI template parameters if the link should
      *               be shown; false otherwise
