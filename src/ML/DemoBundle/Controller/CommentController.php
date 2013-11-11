@@ -18,15 +18,12 @@ use ML\DemoBundle\Entity\Comment;
 class CommentController extends HydraController
 {
     /**
-     * Retrieves a Comment
+     * Retrieves a Comment entity
      *
      * @Route("/{id}", name="comment_retrieve")
      * @Method("GET")
      *
-     * @Hydra\Operation(
-     *   status_codes = {
-     *     "404" = "If the Comment entity wasn't found."
-     * })
+     * @Hydra\Operation()
      *
      * @return ML\DemoBundle\Entity\Comment
      */
@@ -36,7 +33,7 @@ class CommentController extends HydraController
     }
 
     /**
-     * Replaces an existing Comment
+     * Replaces an existing Comment entity
      *
      * @Route("/{id}", name="comment_replace")
      * @Method("PUT")
@@ -44,7 +41,7 @@ class CommentController extends HydraController
      * @Hydra\Operation(
      *   expect = "ML\DemoBundle\Entity\Comment",
      *   status_codes = {
-     *     "404" = "If the Comment wasn't found."
+     *     "404" = "If the Comment entity wasn't found."
      *   }
      * )
      *
@@ -66,15 +63,12 @@ class CommentController extends HydraController
     }
 
     /**
-     * Deletes a Comment
+     * Deletes a Comment entity
      *
      * @Route("/{id}", name="comment_delete")
      * @Method("DELETE")
      *
-     * @Hydra\Operation(
-     *   status_codes = {
-     *     "404" = "If the Comment entity wasn't found."
-     * })
+     * @Hydra\Operation()
      *
      * @return void
      */

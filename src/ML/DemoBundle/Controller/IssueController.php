@@ -25,6 +25,7 @@ class IssueController extends HydraController
      * @Method("GET")
      *
      * @Hydra\Operation()
+     * @Hydra\Collection()
      *
      * @return array<ML\DemoBundle\Entity\Issue>
      */
@@ -38,10 +39,15 @@ class IssueController extends HydraController
     }
 
     /**
-     * Creates a new Issue
+     * Creates a new Issue entity
      *
      * @Route("/", name="issue_create")
      * @Method("POST")
+     *
+     * @Hydra\Operation(
+     *   status_codes = {
+     *     "201" = "If the Issue entity was created successfully."
+     * })
      *
      * @Hydra\Operation(expect = "ML\DemoBundle\Entity\Issue")
      *
@@ -72,15 +78,12 @@ class IssueController extends HydraController
     }
 
     /**
-     * Retrieves a Issue
+     * Retrieves a Issue entity
      *
      * @Route("/{id}", name="issue_retrieve")
      * @Method("GET")
      *
-     * @Hydra\Operation(
-     *   status_codes = {
-     *     "404" = "If the Issue entity wasn't found."
-     * })
+     * @Hydra\Operation()
      *
      * @return ML\DemoBundle\Entity\Issue
      */
@@ -90,7 +93,7 @@ class IssueController extends HydraController
     }
 
     /**
-     * Replaces an existing Issue
+     * Replaces an existing Issue entity
      *
      * @Route("/{id}", name="issue_replace")
      * @Method("PUT")
@@ -98,7 +101,7 @@ class IssueController extends HydraController
      * @Hydra\Operation(
      *   expect = "ML\DemoBundle\Entity\Issue",
      *   status_codes = {
-     *     "404" = "If the Issue wasn't found."
+     *     "404" = "If the Issue entity wasn't found."
      *   }
      * )
      *
@@ -120,15 +123,12 @@ class IssueController extends HydraController
     }
 
     /**
-     * Deletes a Issue
+     * Deletes a Issue entity
      *
      * @Route("/{id}", name="issue_delete")
      * @Method("DELETE")
      *
-     * @Hydra\Operation(
-     *   status_codes = {
-     *     "404" = "If the Issue entity wasn't found."
-     * })
+     * @Hydra\Operation()
      *
      * @return void
      */

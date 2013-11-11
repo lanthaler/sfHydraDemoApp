@@ -2,9 +2,8 @@
 
 namespace ML\DemoBundle\Controller;
 
-use ML\HydraBundle\Controller\HydraController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use ML\HydraBundle\Controller\HydraController;
 use ML\HydraBundle\Mapping as Hydra;
 use ML\HydraBundle\JsonLdResponse;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -44,6 +43,11 @@ class UserController extends HydraController
      * @Route("/", name="user_create")
      * @Method("POST")
      *
+     * @Hydra\Operation(
+     *   status_codes = {
+     *     "201" = "If the User entity was created successfully."
+     * })
+     *
      * @Hydra\Operation(expect = "ML\DemoBundle\Entity\User")
      *
      * @return ML\DemoBundle\Entity\User
@@ -60,11 +64,12 @@ class UserController extends HydraController
         $em->persist($entity);
         $em->flush();
 
-        // TODO Check this
+        $iri = $this->generateUrl('user_retrieve', array('id' => $entity->getId()), true);
+
         $response = new JsonLdResponse(
             $this->serialize($entity),
             201,
-            array('Content-Location' => $this->generateUrl('user_retrieve', array('id' => $entity->getId()), true))
+            array('Content-Location' => $iri)
         );
 
         return $response;
@@ -76,10 +81,7 @@ class UserController extends HydraController
      * @Route("/{id}", name="user_retrieve")
      * @Method("GET")
      *
-     * @Hydra\Operation(
-     *   status_codes = {
-     *     "404" = "If the User entity wasn't found."
-     * })
+     * @Hydra\Operation()
      *
      * @return ML\DemoBundle\Entity\User
      */
@@ -124,10 +126,7 @@ class UserController extends HydraController
      * @Route("/{id}", name="user_delete")
      * @Method("DELETE")
      *
-     * @Hydra\Operation(
-     *   status_codes = {
-     *     "404" = "If the User entity wasn't found."
-     * })
+     * @Hydra\Operation()
      *
      * @return void
      */
