@@ -1,3 +1,9 @@
+# MLDemoBundle routes (to be removed)
+_demo:
+    resource: "@MLDemoBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 hydra:
     resource: "@HydraBundle/Controller/"
     type:     annotation
