@@ -13,7 +13,6 @@
             "role": "Developer"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.3",
         "symfony/symfony": "2.3.*",
@@ -27,7 +26,8 @@
         "sensio/framework-extra-bundle": "2.3.*",
         "sensio/generator-bundle": "2.3.*",
         "incenteev/composer-parameter-handler": "~2.0",
-        "ml/hydra-bundle": "@dev"
+        "ml/hydra-bundle": "@dev",
+        "ml/json-ld": "@dev"
     },
     "scripts": {
         "post-install-cmd": [
@@ -50,9 +50,6 @@
         "symfony-web-dir": "web",
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
-        },
-        "branch-alias": {
-            "dev-master": "2.4-dev"
         }
     },
     "config": {
