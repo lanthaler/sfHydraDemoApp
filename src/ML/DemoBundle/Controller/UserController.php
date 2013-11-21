@@ -44,11 +44,10 @@ class UserController extends HydraController
      * @Method("POST")
      *
      * @Hydra\Operation(
+     *   expect = "ML\DemoBundle\Entity\User",
      *   status_codes = {
      *     "201" = "If the User entity was created successfully."
      * })
-     *
-     * @Hydra\Operation(expect = "ML\DemoBundle\Entity\User")
      *
      * @return ML\DemoBundle\Entity\User
      */

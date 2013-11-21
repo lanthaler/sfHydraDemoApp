@@ -45,11 +45,10 @@ class IssueController extends HydraController
      * @Method("POST")
      *
      * @Hydra\Operation(
+     *   expect = "ML\DemoBundle\Entity\Issue",
      *   status_codes = {
      *     "201" = "If the Issue entity was created successfully."
      * })
-     *
-     * @Hydra\Operation(expect = "ML\DemoBundle\Entity\Issue")
      *
      * @return ML\DemoBundle\Entity\Issue
      */
